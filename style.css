@@ -1,0 +1,152 @@
+* { /* reset */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root { /* font size e variáveis */
+    font-size: 62.5%; /*p resetar font size p 10px */
+    --ff-primary: 'Poppins', sans-serif;
+    --text-color: #303030;
+    --hue: 194; /* saturação, luminansa */ 
+    --primary-color: hsl(var(--hue), 100%, 63%)
+}
+
+body {
+    font-size: 1.6rem;
+    color: var(--text-color);
+}
+body * {
+    font-family: var(--ff-primary); 
+    background-color: rgb(250, 254, 255);
+}
+
+.sr-only { /* classe screen reader only pra tirar o nome "usuário do github" de cima do input */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px; /* mantem ele dentro da caixinha */
+    overflow:hidden; /* transbordando da caixa, não pode aparecer */
+    clip: rect(0, 0, 0, 0); /* pra forçar q a caixa fique "inexistente" */
+    white-space: nowrap; /* não permite com que ele quebra a linha */
+    border-width: 0; 
+}
+
+#app {
+    max-width: 500px; /* negocio de responsividade */
+    margin: 0 auto; /* alinha ao centro */
+    padding: 2rem; /* ficar com um preenchimento aos lados quando a tela tiver mto pequena */
+}
+
+header {
+    display: flex;
+    align-items: center; /* n fica nenhum muito em cima nem embaixo*/
+    justify-content: space-between;
+
+    margin: 2.5rem 0;
+}
+
+header h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.search input {
+    height: 3.2rem;
+    border: 1px solid #ccc;
+    border-radius: .4rem 0 0 .4rem;
+    padding: 0 .8rem;
+}
+
+.search button {
+    background-color: var(--primary-color);
+    border-radius: 0 .4rem .4rem 0;
+    height: 3.2rem;
+    border: none;
+    padding: 0 1rem;
+
+    cursor: pointer;
+}
+
+.search button:hover {
+    filter: brightness(1.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* tirou as falhinhas das colunas azui */
+
+    box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3);
+}
+
+table *{
+    font-size: 1.4rem;
+    color: var(--text-color); 
+}
+
+table th {
+    background: var(--primary-color); 
+    text-align: left;
+    font-weight: normal;
+    padding: 1.5rem;
+}
+
+table th:first-child {
+    border-top-left-radius: .4rem; /* arredonda o cantinho esquerdo superior */
+}
+
+table th:last-child {
+    border-top-right-radius: .4rem;
+}
+
+
+table tr:nth-child(odd) { /* td oq for impar coloca essa cor */
+    background-color: #2c0d0d;
+}
+
+table tr:nth-child(even) {
+    background: #7a7979; 
+}
+
+table td {
+    padding: 1.5rem; 
+    text-align: left; 
+}
+
+td.user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+td.user img { /* imagens do user */
+    width: 5rem;
+    height: 5rem;
+    
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+td.user a{
+    text-decoration: none;
+}
+
+td.user a p {
+    font-weight: bold;
+}
+
+td .remove {
+    background: none;
+    border: none;
+
+    color: red;
+}
+
